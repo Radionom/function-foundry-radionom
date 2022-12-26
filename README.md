@@ -13,3 +13,14 @@
 <p align="center">
   <a href="https://docs.usefoundry.io">Documentation</a> •
   <a href="https://docs.usefoundry.io/quickstart">Quickstart</a> • 
+  <a href="https://docs.usefoundry.io/tools">Tool Collection</a> • 
+  <a href="https://docs.usefoundry.io/contributing">Contribute</a> •
+  <a href="https://discord.gg/xsZfmakRhw">Discord</a>
+
+</p>
+
+<hr/>
+
+## About
+
+As we wanted to get the Foundry framework up and running as quickly as possible, the range of tools is 
