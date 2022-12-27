@@ -23,4 +23,6 @@
 
 ## About
 
-As we wanted to get the Foundry framework up and running as quickly as possible, the range of tools is 
+As we wanted to get the Foundry framework up and running as quickly as possible, the range of tools is limited for the time being. But we're working on many more tools, and we believe in the power of collective effort - so we invite _you_ to contribute!
+
+If you develop custom tools for use with LLMs, please consider contributing them to the Foundry library. As the number of tools in Foundry grows, its reach expands, le
