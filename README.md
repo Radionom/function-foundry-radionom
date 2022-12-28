@@ -25,4 +25,18 @@
 
 As we wanted to get the Foundry framework up and running as quickly as possible, the range of tools is limited for the time being. But we're working on many more tools, and we believe in the power of collective effort - so we invite _you_ to contribute!
 
-If you develop custom tools for use with LLMs, please consider contributing them to the Foundry library. As the number of tools in Foundry grows, its reach expands, le
+If you develop custom tools for use with LLMs, please consider contributing them to the Foundry library. As the number of tools in Foundry grows, its reach expands, leading to the creation of even more tools, and so on.
+
+## Documentation
+
+This README features a quick overview – for a detailed documentation, go to [docs.usefoundry.io](https://docs.usefoundry.io).
+
+## Quickstart
+
+#### Install the Foundry base package
+
+```bash
+npm install @usefoundry/foundry
+```
+
+#### Install the Tools you want to 
