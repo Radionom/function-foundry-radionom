@@ -39,4 +39,16 @@ This README features a quick overview – for a detailed documentation, go to [d
 npm install @usefoundry/foundry
 ```
 
-#### Install the Tools you want to 
+#### Install the Tools you want to use, e.g.
+
+```bash
+npm install @usefoundry/tools-api-weather-api @usefoundry/tools-file-csv
+```
+
+## Foundry's Workflow
+
+1. You define the tools you want to use using a new instance of `Foundry`
+
+```typescript
+import { Foundry, pickFromTool } from '@usefoundry/foundry'
+import { Configuration, OpenAIApi } 
