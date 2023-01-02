@@ -62,4 +62,14 @@ const foundry = new Foundry({
         new WeatherApiTool({
             apiKey: process.env.WEATHER_API_KEY!,
         }),
-        new Ca
+        new CalculatorTool(),
+        pickFromTool(new CsvTool(), ['writeCsvFileSync']),
+    ],
+})
+```
+
+<details>
+<summary>2. Foundry will convert the function declaration of each function of the selected tools into a JSON schema LLMs can understand</summary>
+
+```typescript
+const functions = foundry.getPreparedFunctions({ target: 'opena
