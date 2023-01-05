@@ -72,4 +72,11 @@ const foundry = new Foundry({
 <summary>2. Foundry will convert the function declaration of each function of the selected tools into a JSON schema LLMs can understand</summary>
 
 ```typescript
-const functions = foundry.getPreparedFunctions({ target: 'opena
+const functions = foundry.getPreparedFunctions({ target: 'openai' })
+/*
+[
+  {
+    "name": "WeatherApiTool__getFutureWeatherForCityAtDate",
+    "description": "Gets the weather forecast for a city at a specific date, starting 14 days in the future. So for getting the weather for a day within the next 14 days, use the getNearFutureWeatherForCity function.",
+    "parameters": {
+   
