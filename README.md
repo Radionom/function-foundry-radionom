@@ -79,4 +79,19 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
     "name": "WeatherApiTool__getFutureWeatherForCityAtDate",
     "description": "Gets the weather forecast for a city at a specific date, starting 14 days in the future. So for getting the weather for a day within the next 14 days, use the getNearFutureWeatherForCity function.",
     "parameters": {
-   
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "description": "Date in YYYY-MM-DD format"
+        }
+      },
+      "required": [
+        "city",
+        "date"
+      ],
+      "additionalProperties": false,
+      "d
