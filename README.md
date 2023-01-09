@@ -117,4 +117,10 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
         "days"
       ],
       "additionalProperties": false,
-      "description": "
+      "description": "Gets the weather forecast for a city for the next 1-10 days. Always use this function when asked about a date WITHIN the next 14 days.",
+      "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+  },
+  {
+    "name": "WeatherApiTool__getCurrentWeatherForCity",
+    "description": "Gets the current wea
