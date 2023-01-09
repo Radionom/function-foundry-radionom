@@ -108,4 +108,13 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
           "type": "string"
         },
         "days": {
-        
+          "type": "number",
+          "description": "Number of days of weather forecast. Value ranges from 1 to 10. 1 is today's weather, 2 is today and tomorrow's weather, and so on."
+        }
+      },
+      "required": [
+        "city",
+        "days"
+      ],
+      "additionalProperties": false,
+      "description": "
