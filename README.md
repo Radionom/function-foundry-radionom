@@ -123,4 +123,17 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
   },
   {
     "name": "WeatherApiTool__getCurrentWeatherForCity",
-    "description": "Gets the current wea
+    "description": "Gets the current weather for a city.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "city"
+      ],
+      "additionalProperties": false,
+      "description": "Gets the current weather for a city.",
+      "$schema": "http://jso
