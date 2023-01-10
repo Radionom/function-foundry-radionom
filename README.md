@@ -136,4 +136,15 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
       ],
       "additionalProperties": false,
       "description": "Gets the current weather for a city.",
-      "$schema": "http://jso
+      "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+  },
+  {
+    "name": "CalculatorTool__calculate",
+    "description": "Evaluates a mathematical expression and returns the result as string. Always use it do any math",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string",
+          "description": "
