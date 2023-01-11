@@ -147,4 +147,13 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
       "properties": {
         "expression": {
           "type": "string",
-          "description": "
+          "description": "The mathematical expression to evaluate"
+        }
+      },
+      "required": [
+        "expression"
+      ],
+      "additionalProperties": false,
+      "description": "Evaluates a mathematical expression and returns the result as string. Always use it do any math",
+      "$schema": "http://json-schema.org/draft-07/schema#"
+   
