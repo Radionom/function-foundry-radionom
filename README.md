@@ -156,4 +156,19 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
       "additionalProperties": false,
       "description": "Evaluates a mathematical expression and returns the result as string. Always use it do any math",
       "$schema": "http://json-schema.org/draft-07/schema#"
-   
+    }
+  },
+  {
+    "name": "CsvTool__writeCsvFileSync",
+    "description": "Writes data to a csv file",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "
