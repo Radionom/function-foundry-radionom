@@ -181,4 +181,23 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
           "items": {
             "type": "string"
           },
-          "description": "Defines 
+          "description": "Defines the columns to write, in order"
+        }
+      },
+      "required": [
+        "path",
+        "data",
+        "columns"
+      ],
+      "additionalProperties": false,
+      "description": "Writes data to a csv file",
+      "$schema": "http://json-schema.org/draft-07/schema#"
+    }
+  }
+]
+*/
+```
+
+</details>
+
+3. Prompt an LLM with the generated
