@@ -171,4 +171,14 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
           "type": "array",
           "items": {
             "type": "object",
-            "
+            "properties": {},
+            "additionalProperties": false
+          },
+          "description": "The rows to write, as an array of objects, each key representing a column"
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Defines 
