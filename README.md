@@ -200,4 +200,13 @@ const functions = foundry.getPreparedFunctions({ target: 'openai' })
 
 </details>
 
-3. Prompt an LLM with the generated
+3. Prompt an LLM with the generated functions to select one to execute based on the prompt
+
+```typescript
+// Initialize OpenAI API
+const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY!,
+})
+const openai = new OpenAIApi(configuration)
+
+const prompt = "What's the current weather in B
