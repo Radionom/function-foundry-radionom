@@ -209,4 +209,23 @@ const configuration = new Configuration({
 })
 const openai = new OpenAIApi(configuration)
 
-const prompt = "What's the current weather in B
+const prompt = "What's the current weather in Berlin?"
+
+const llmResponse = await openai.createChatCompletion({
+    functions: functions,
+    function_call: 'auto',
+    messages: [
+        {
+            role: 'user',
+            content: prompt,
+        },
+    ],
+    model: 'gpt-4-0613',
+    temperature: 0,
+})
+```
+
+4. Use Foundry to execute the function
+
+```typescript
+const tar
