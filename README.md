@@ -228,4 +228,8 @@ const llmResponse = await openai.createChatCompletion({
 4. Use Foundry to execute the function
 
 ```typescript
-const tar
+const targetFunction = llmResponse.data.choices[0].message?.function_call
+
+// will execute `await WeatherApiTool.getCurrentWeatherForCity({ city: "Berlin" })`
+const functionResult = await foundry.runSelectedFunction(targetFunctionProps)
+```
