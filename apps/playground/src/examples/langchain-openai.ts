@@ -8,4 +8,16 @@ import CsvTool from '@usefoundry/tools-file-csv'
 const foundry = new Foundry({
     tools: [
         new WeatherApiTool({
-            apiKey: process.env.WEATHER_API_K
+            apiKey: process.env.WEATHER_API_KEY!,
+        }),
+        pickFromTool(new CsvTool(), [
+            'writeCsvFileSync',
+            'getCsvFileColumnsSync',
+            'appendToCsvFileSync',
+        ]),
+    ],
+})
+
+const predictFunction = async (
+    messages: (SystemChatMessage | HumanChatMessage | AIChatMessage)[],
+    llm: Chat
