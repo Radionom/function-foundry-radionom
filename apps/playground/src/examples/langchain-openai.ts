@@ -20,4 +20,13 @@ const foundry = new Foundry({
 
 const predictFunction = async (
     messages: (SystemChatMessage | HumanChatMessage | AIChatMessage)[],
-    llm: Chat
+    llm: ChatOpenAI
+) => {
+    const stepRes = await llm.predictMessages(messages, {
+        functions: foundry.getPreparedFunctions({ target: 'openai' }),
+        function_call: 'auto',
+    })
+    if (stepRes?.additional_kwargs?.function_call?.name) {
+        return {
+            name: stepRes.additional_kwargs.function_call.name,
+    
