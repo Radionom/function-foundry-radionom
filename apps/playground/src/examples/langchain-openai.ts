@@ -43,4 +43,17 @@ export const runLangchainPromptChain = async ({ prompt }: { prompt: string }) =>
     })
 
     const messages = [
-      
+        new SystemChatMessage(`
+        Context:
+        - Current date: ${new Date().toDateString()}
+    `),
+        new HumanChatMessage(prompt),
+    ]
+
+    let run = true
+
+    const executedFunctions = []
+
+    while (run) {
+        const stepRes = await predictFunction(messages, model)
+        console.log({ stepRes })
