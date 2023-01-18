@@ -29,4 +29,18 @@ const predictFunction = async (
     if (stepRes?.additional_kwargs?.function_call?.name) {
         return {
             name: stepRes.additional_kwargs.function_call.name,
-    
+            arguments: stepRes.additional_kwargs.function_call.arguments,
+        }
+    }
+
+    return null
+}
+
+export const runLangchainPromptChain = async ({ prompt }: { prompt: string }) => {
+    const model = new ChatOpenAI({
+        modelName: 'gpt-4-0613',
+        temperature: 0,
+    })
+
+    const messages = [
+      
