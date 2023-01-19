@@ -57,3 +57,15 @@ export const runLangchainPromptChain = async ({ prompt }: { prompt: string }) =>
     while (run) {
         const stepRes = await predictFunction(messages, model)
         console.log({ stepRes })
+        if (!stepRes) {
+            run = false
+            break
+        }
+
+        const functionCallResult = await foundry.runSelectedFunction(stepRes)
+        executedFunctions.push(stepRes)
+
+        messages.push(
+            new AIChatMessage(`
+            Call function: 
+            - name: ${stepRes
