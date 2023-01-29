@@ -82,4 +82,10 @@ export const runLangchainPromptChain = async ({ prompt }: { prompt: string }) =>
 
         messages.push(
             new HumanChatMessage(
-                `If you
+                `If you have not solved every sub-task of the prompt yet, please continue. Otherwise, don't call a function.`
+            )
+        )
+    }
+
+    return { executedFunctions }
+}
