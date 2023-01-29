@@ -68,4 +68,18 @@ export const runLangchainPromptChain = async ({ prompt }: { prompt: string }) =>
         messages.push(
             new AIChatMessage(`
             Call function: 
-            - name: ${stepRes
+            - name: ${stepRes.name}
+            - arguments: ${stepRes.arguments?.toString()}
+        `)
+        )
+
+        messages.push(
+            new SystemChatMessage(`
+            Function result:
+            ${JSON.stringify(functionCallResult)}
+        `)
+        )
+
+        messages.push(
+            new HumanChatMessage(
+                `If you
