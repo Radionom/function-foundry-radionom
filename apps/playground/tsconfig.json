@@ -20,3 +20,5 @@
         "outDir": "dist"
     },
     "include": ["./src"],
+    "exclude": ["node_modules", "./src/__tests__"]
+}

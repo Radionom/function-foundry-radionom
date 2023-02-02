@@ -1,0 +1,138 @@
+
+---
+title: 'Contributing'
+description: "Let's build the future of LLM applications – together!"
+icon: 'heart'
+---
+
+## Introduction
+
+We believe that the success of Foundry lies in the collaboration and contributions from a vibrant community of developers. Whether you are a seasoned developer or just starting out, we welcome your contributions to enhance the Foundry ecosystem. There are multiple ways you can contribute to Foundry:
+
+-   **Submit Custom Tools**:
+    Foundry is a framework-agnostic collection of tools, and you can contribute by creating and submitting your own custom tools. A Tool is a set of functions designed to perform specific tasks within a certain domain. By creating and sharing your custom tools, you can help expand the functionality and usefulness of Foundry for everyone.
+
+-   **Find and Solve Bugs**:
+    As with any software project, bugs are bound to occur. If you come across any bugs or issues while using Foundry, we encourage you to report them. By providing detailed bug reports and even proposing fixes or solutions, you can help improve the stability and reliability of Foundry for all users.
+
+-   **Contribute to the General Ecosystem**:
+    Beyond custom tools and bug fixes, you can contribute to the general ecosystem of Foundry. This can involve improving documentation, suggesting new features or enhancements, sharing best practices and tutorials, or engaging in discussions on community forums. Your contributions to the general ecosystem can greatly benefit the entire community and make Foundry a better Tool for everyone.
+
+We value all contributions equally, regardless of their size or scope. Whether you submit a new custom Tool, fix a critical bug, or provide valuable feedback, your contribution is highly appreciated. Together, we can build a thriving community of developers passionate about building LLM apps and leveraging the power of Foundry.
+
+## Contribution Development Workflow
+
+1. Fork the Foundry repository on GitHub. Then clone your fork to your local machine.
+2. Install the project dependencies by running `pnpm install` in the root directory.
+3. Make your desired changes or additions.
+4. Build the Tool using `pnpm build`. The documentation for the Tool is automatically generated post-build.
+5. Test them by adding, updating or running existing unit tests. Run `pnpm test` to execute the tests
+6. Create a changeset
+
+A changeset is a file that describes the changes you have made to the project. It is used to generate a changelog and to determine the next version number for each package.
+
+In the root directory, run:
+
+```bash
+pnpm run changeset
+```
+
+When prompted, select the impacted packages, select the type of change (patch, minor, major), and enter a summary of your changes.
+This will create a new changeset file in the `.changeset` directory.
+
+7. Commit and push your changes
+8. Submit a pull request to the `main` branch in the Foundry repository.
+9. Go through the review process together with Foundry maintainers.
+10. Once your contribution is accepted, it will be merged into the main codebase! 🎉
+
+If you have any questions or need assistance with your contribution, please join our [Discord community](https://discord.gg/xsZfmakRhw) and ask in the `#contribution-help` channel.
+
+## Creating and Contributing a new Tool
+
+### 1. Use the Tool generator to create a new Tool
+
+We've set up a generator to help you create a new Tool. To use it, the following from the root directory:
+
+```bash
+pnpm turbo gen tool
+```
+
+You'll be prompted to choose a name. Stick with _camelCase_ for the name - it should describe the general purpose of the Tool.
+e.g. `pdf`, `imageProcessing`, `asana`, `airtable` etc.
+
+You'll also be prompted to choose one of the following Tool types:
+
+-   `API` - tools that interact with external APIs
+-   `Utils` - tools that provide utility functions of some kind
+-   `File` - tools that interact with files
+
+The generator will create a new directory at `packages/tools/{type}/{name}` with all necessary files and configs.
+
+### 2. Implementing the Tool
+
+Open `src/tool.ts` to see the class that represents the Tool.
+
+If the Tool needs to have a basic configuration, add parameters to the constructor and store them as private properties on the class to be able use them within all methods.
+
+<Accordion title="Example with constructor properties">
+
+<CodeGroup>
+
+```typescript tool.ts
+import type { AxiosInstance } from 'axios'
+
+import { makeFunction } from '@usefoundry/utils'
+import { z } from 'zod'
+import { createApi } from './api.js'
+
+export class WeatherApiTool {
+    public description = 'Tool to get weather data from weatherapi.com'
+
+    private apiKey: string = ''
+    private apiClient: AxiosInstance
+    constructor({ apiKey }: { apiKey: string }) {
+        this.apiKey = apiKey
+        this.apiClient = createApi({ apiKey })
+    }
+}
+```
+
+```typescript api.ts
+import axios from 'axios'
+
+export const createApi = ({ apiKey }: { apiKey: string }) =>
+    axios.create({
+        baseURL: 'http://api.weatherapi.com',
+    })
+```
+
+</CodeGroup>
+
+</Accordion>
+
+Now you're all set the add functions to the Tool. Try to keep functions as pure as possible and avoid side effects.
+
+To add a function, always use the `makeFunction` helper function from `@usefoundry/utils`.
+
+<AccordionGroup>
+    <Accordion title="What does it do?">
+    -   It allows to use the `zod` schema that is passed as first argument to generate the JSON schema
+    -   It allows type-safety by inferring type `zod` schema type and passing it to the handler
+    -   It helps to automatically generate the documentation for the function based on the `zod` schema
+    </Accordion>
+
+<Accordion title="Syntax">
+```typescript
+makeFunction(
+    schema: z.ZodSchema<unknown>,
+    handler: (params: z.infer<typeof schema>) => Promise<unknown>
+)
+```
+</Accordion>
+</AccordionGroup>
+
+**Usage**
+
+```typescript
+import { makeFunction } from '@usefoundry/utils'
+import { z } from 'zod'
