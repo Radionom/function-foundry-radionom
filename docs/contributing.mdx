@@ -136,3 +136,50 @@ makeFunction(
 ```typescript
 import { makeFunction } from '@usefoundry/utils'
 import { z } from 'zod'
+import { evaluate } from 'mathjs'
+
+export class CalculatorTool {
+    public description = 'Tool to evaluate mathematical expressions'
+
+    constructor() {}
+
+    public calculate = makeFunction(
+        z
+            .object({
+                expression: z.string().describe('The mathematical expression to evaluate'),
+            })
+            .describe(
+                'Evaluates a mathematical expression and returns the result as string. Always use it do any math'
+            ),
+        async ({ expression }) => {
+            return evaluate(expression)
+        }
+    )
+}
+
+export default CalculatorTool
+```
+
+As seen in the example above, make sure to always **add a description** to the schema object, which serves as the description of the function.
+
+Also add a description to all properties of the schema object to further instruct the LLM on how to use the function and what properties to pass.
+
+### 3. Building the Tool
+
+To build the Tool, run `pnpm build` from the Tool's directory. Alternatively run it from the root directory to build all Tools and utils.
+
+After the build is complete, the documentation for the Tool will be automatically generated in the `docs` directory.
+To describe the Tool itself, add a public `description` property to the Tool class, as in the example above.
+
+### 4. Testing the Tool
+
+For `utils` and `file` Tools we ask you to please write unit tests for each Function. There currently isn't a setup for API Tools, but we're working on it.
+
+All tests should be placed in the `__tests__` directory of the Tool.
+
+### 5. Publishing the Tool
+
+To publish the Tool, stick to the development workflow described [above](#contribution-development-workflow), starting at step 6 (create a changeset).
+Once your PR is merged, the Tool will be automatically published to NPM.
+
+> Thanks for your contribution! 🎉 We're looking forward to seeing your Tool in action!
