@@ -22,4 +22,12 @@ Tools are logically grouped into multiple categories:
 A function is a function within the tool class. Functions are declared with a **schema** and a **handler**.
 
 The **schema** is a `zod` schema that describes the input of the function. When using it with Foundry, it's converted to a JSON schema which LLMs can understand.
-The **handler** is a function that is called when the function is executed. It receives th
+The **handler** is a function that is called when the function is executed. It receives the input as an object and returns the output.
+
+## Using just parts of a tool
+
+By default, all functions of a tool are exposed to LLMs. However, you can also expose just a single function or a subset of functions using the `pickFromTool` function provided by `@usefoundry/foundry`.
+
+## Example implementation of a Tool
+
+To better under
