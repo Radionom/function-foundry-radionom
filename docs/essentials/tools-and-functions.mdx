@@ -35,4 +35,16 @@ To better understand how tools work, let's look at an example implementation of 
 This tool is a calculator that can be used to evaluate mathematical expressions.
 It exposes the `calculate` function which takes an expression as input and returns the result as a string.
 
-```typescript packages/tools/utils/calculator/src/tool.
+```typescript packages/tools/utils/calculator/src/tool.ts
+import { makeFunction } from '@usefoundry/utils'
+import { z } from 'zod'
+import { evaluate } from 'mathjs'
+
+export class CalculatorTool {
+    constructor() {}
+
+    public calculate = makeFunction(
+        z
+            .object({
+                expression: z.string().describe('The mathematical expression to evaluate'),
+      
