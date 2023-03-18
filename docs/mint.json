@@ -2,4 +2,18 @@
     "$schema": "https://mintlify.com/schema.json",
     "name": "Foundry",
     "logo": {
-        "dark": "/logo/logo_dark_aligned.s
+        "dark": "/logo/logo_dark_aligned.svg",
+        "light": "/logo/logo_light_aligned.svg"
+    },
+    "favicon": "/favicon.png",
+    "colors": {
+        "primary": "#4FDD80",
+        "light": "#6CEE99",
+        "dark": "#33BA51",
+        "background": {
+            "dark": "#111312"
+        }
+    },
+    "topbarCtaButton": {
+        "type": "github",
+        "url":
