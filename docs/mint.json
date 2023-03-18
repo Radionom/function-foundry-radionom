@@ -16,4 +16,19 @@
     },
     "topbarCtaButton": {
         "type": "github",
-        "url":
+        "url": "https://github.com/eykrehbein/foundry"
+    },
+    "topAnchor": {
+        "name": "Overview",
+        "icon": "book-open"
+    },
+    "anchors": [
+        {
+            "name": "Tools",
+            "icon": "toolbox",
+            "url": "tools"
+        }
+    ],
+    "navigation": [
+        {
+            "grou
