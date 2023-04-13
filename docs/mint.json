@@ -41,4 +41,15 @@
         {
             "group": "API Tools",
             "pages": ["tools/api/WeatherApi"]
-        
+        },
+        {
+            "group": "Utility Tools",
+            "pages": ["tools/utils/Calculator", "tools/utils/Random"]
+        },
+        {
+            "group": "File Tools",
+            "pages": ["tools/file/Csv"]
+        }
+    ],
+    "footerSocials": {
+        "github": "https://github.com/ey
