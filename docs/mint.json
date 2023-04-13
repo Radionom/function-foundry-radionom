@@ -31,4 +31,14 @@
     ],
     "navigation": [
         {
-            "grou
+            "group": "Get Started",
+            "pages": ["introduction", "quickstart", "contributing"]
+        },
+        {
+            "group": "Essentials",
+            "pages": ["essentials/tools-and-functions", "essentials/create-custom-tools"]
+        },
+        {
+            "group": "API Tools",
+            "pages": ["tools/api/WeatherApi"]
+        
