@@ -52,4 +52,13 @@
         }
     ],
     "footerSocials": {
-        "github": "https://github.com/ey
+        "github": "https://github.com/eykrehbein/foundry",
+        "discord": "https://discord.gg/xsZfmakRhw",
+        "twitter": "https://twitter.com/webeyk"
+    },
+    "analytics": {
+        "plausible": {
+            "domain": "docs.usefoundry.io"
+        }
+    }
+}
