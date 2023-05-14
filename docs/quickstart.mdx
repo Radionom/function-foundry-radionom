@@ -35,4 +35,13 @@ description: 'Get started with Foundry in 2 minutes.'
 
     ### 1. Register Tools and Functions
 
- 
+    ```typescript
+    import { Foundry, pickFromTool } from '@usefoundry/foundry'
+
+    import CsvTool from '@usefoundry/tools-file-csv'
+    import CalculatorTool from '@usefoundry/tools-utils-calculator'
+
+    const foundry = new Foundry({
+      tools: [
+        new CalculatorTool(),
+        pickFromTool(new CsvTool(), ['writeCs
