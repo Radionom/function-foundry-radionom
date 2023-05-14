@@ -58,4 +58,14 @@ description: 'Get started with Foundry in 2 minutes.'
     const functions = foundry.getPreparedFunctions({ target: 'openai' })
     ```
 
-    <Accordion title="Resulting JSON Schema
+    <Accordion title="Resulting JSON Schema">
+    ```JSON
+    [
+      {
+        "name": "CalculatorTool__calculate",
+        "description": "Evaluates a mathematical expression and returns the result as string. Always use it do any math",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "expression": {
+              "type
