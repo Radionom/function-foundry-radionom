@@ -44,4 +44,18 @@ description: 'Get started with Foundry in 2 minutes.'
     const foundry = new Foundry({
       tools: [
         new CalculatorTool(),
-        pickFromTool(new CsvTool(), ['writeCs
+        pickFromTool(new CsvTool(), ['writeCsvFileSync'])
+      ]
+    })
+
+    ```
+
+    ### 2. Get the function definitions for the LLM
+
+    Foundry has a built-in method to generate the expected JSON schema with the selected functions.
+
+    ```typescript
+    const functions = foundry.getPreparedFunctions({ target: 'openai' })
+    ```
+
+    <Accordion title="Resulting JSON Schema
