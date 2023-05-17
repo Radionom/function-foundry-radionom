@@ -68,4 +68,12 @@ description: 'Get started with Foundry in 2 minutes.'
           "type": "object",
           "properties": {
             "expression": {
-              "type
+              "type": "string",
+              "description": "The mathematical expression to evaluate"
+            }
+          },
+          "required": [
+            "expression"
+          ],
+          "additionalProperties": false,
+          "description": "Evaluates a mathematical expression and returns the result as string. Always us
