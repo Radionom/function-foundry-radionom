@@ -96,4 +96,17 @@ description: 'Get started with Foundry in 2 minutes.'
                 "properties": {},
                 "additionalProperties": false
               },
-              "description": "The rows to write, as an array 
+              "description": "The rows to write, as an array of objects, each key representing a column"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Defines the columns to write, in order"
+            }
+          },
+          "required": [
+            "path",
+            "data",
+           
