@@ -125,4 +125,15 @@ description: 'Get started with Foundry in 2 minutes.'
     ### 3. Run the LLM
 
     ```typescript
-    const configuration = new Confi
+    const configuration = new Configuration({
+      apiKey: process.env.OPENAI_API_KEY!,
+    })
+
+    const openai = new OpenAIApi(configuration)
+
+    const prompt = "Write a list of fruits into ./fruits.csv"
+
+    const response = await openai.createChatCompletion({
+          // Just pass the generated function definitions to the LLm
+          functions: functions,
+     
