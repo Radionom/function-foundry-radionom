@@ -151,4 +151,11 @@ description: 'Get started with Foundry in 2 minutes.'
     ### 4. Parse the result
 
     ```typescript
-    // Parse the result and get 
+    // Parse the result and get the function that should be executed
+    const targetFunctionProps = response.data.choices[0].message?.function_call
+
+    if (!targetFunctionProps) {
+        throw new Error('No function found in response')
+    }
+
+    // will execute CsvTool.writeCsvFileSync with the props given by
