@@ -169,4 +169,17 @@ description: 'Get started with Foundry in 2 minutes.'
 
       Choose the [Tools](/tools) you want to use and install them using the instruction in the Tools' documentations.
 
-      ## U
+      ## Usage
+
+      To use a Tool, instanciate it and call the function you want to use.
+
+      ```typescript
+      import CalculatorTool from '@usefoundry/tools-utils-calculator'
+
+      const tool = new CalculatorTool()
+
+      const result = tool.calculate("123 + 456")
+      ```
+    </Tab>
+
+</Tabs>
