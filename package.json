@@ -1,0 +1,6 @@
+{
+    "name": "foundry",
+    "private": true,
+    "scripts": {
+        "build": "turbo run build",
+     
