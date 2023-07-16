@@ -79,4 +79,4 @@
 ### Patch Changes
 
 -   Updated dependencies
-    -   @usefoundry/tools-api-weather-api@0
+    -   @usefoundry/tools-api-weather-api@0.2.1

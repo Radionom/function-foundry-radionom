@@ -1,0 +1,9 @@
+{
+    "name": "@usefoundry/foundry",
+    "version": "0.1.1",
+    "description": "Foundry Collection",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "homepage": "https://docs.usefoundry.io",
+    "r
