@@ -20,4 +20,25 @@
 ### Patch Changes
 
 -   Updated dependencies
-    -   @usefoundry/tools-file-csv
+    -   @usefoundry/tools-file-csv@0.2.1
+
+## 0.1.8
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @usefoundry/tools-file-csv@0.2.0
+
+## 0.1.7
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @usefoundry/tools-api-weather-api@0.4.2
+
+## 0.1.6
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @usefoundry/tools-api-weather-api
