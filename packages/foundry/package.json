@@ -6,4 +6,16 @@
     "types": "dist/index.d.ts",
     "type": "module",
     "homepage": "https://docs.usefoundry.io",
-    "r
+    "repository": "https://github.com/eykrehbein/foundry",
+    "author": "Eyk Rehbein",
+    "scripts": {
+        "build": "tsup src/index.ts --format esm --dts",
+        "lint": "tsc",
+        "test": "vitest"
+    },
+    "license": "MIT",
+    "private": false,
+    "dependencies": {
+        "@usefoundry/tsconfig": "*",
+        "@usefoundry/utils": "*"
+   
