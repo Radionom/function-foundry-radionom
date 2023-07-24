@@ -15,4 +15,11 @@ export class Foundry {
         for (const entity of tools) {
             // if it's a function
             if (typeof entity === 'function') {
-                if (!validate
+                if (!validateFunction(entity as FunctionRef)) {
+                    throw new Error('Invalid function')
+                }
+
+                const parsedFunction = parseStandaloneFunction(entity as FunctionRef)
+                this.flatFunctions.push(parsedFunction)
+                // if it's an array
+            } else if (Array
