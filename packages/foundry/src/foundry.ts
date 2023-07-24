@@ -22,4 +22,12 @@ export class Foundry {
                 const parsedFunction = parseStandaloneFunction(entity as FunctionRef)
                 this.flatFunctions.push(parsedFunction)
                 // if it's an array
-            } else if (Array
+            } else if (Array.isArray(entity)) {
+                console.log({
+                    entity,
+                })
+                for (const el of entity) {
+                    if (typeof el === 'function') {
+                        if (!validateFunction(el as FunctionRef)) {
+                            throw new Error('Invalid function')
+          
