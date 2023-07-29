@@ -30,4 +30,15 @@ export class Foundry {
                     if (typeof el === 'function') {
                         if (!validateFunction(el as FunctionRef)) {
                             throw new Error('Invalid function')
-          
+                        }
+                    }
+                }
+
+                const parsedFunctions = parseToolFunctions(entity)
+                this.flatFunctions.push(...parsedFunctions)
+            } else {
+                if (!validateTool(entity)) {
+                    throw new Error('Invalid tool')
+                }
+
+                const parsedFunctions =
