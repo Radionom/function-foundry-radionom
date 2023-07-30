@@ -41,4 +41,18 @@ export class Foundry {
                     throw new Error('Invalid tool')
                 }
 
-                const parsedFunctions =
+                const parsedFunctions = parseToolFunctions(entity)
+                this.flatFunctions.push(...parsedFunctions)
+            }
+        }
+    }
+
+    public getFunction(fullName: string) {
+        const func = this.flatFunctions.find((el) => el.fullName === fullName)
+        if (!func) {
+            throw new Error(`Function ${fullName} not found.`)
+        }
+        return func
+    }
+
+    publ
