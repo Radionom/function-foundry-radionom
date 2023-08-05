@@ -55,4 +55,13 @@ export class Foundry {
         return func
     }
 
-    publ
+    public getPreparedFunctions({ target }: { target: 'openai' }) {
+        if (target === 'openai') {
+            return this.flatFunctions.map((el) => ({
+                name: el.fullName,
+                description: el.definition.description,
+                parameters: el.definition.schema,
+            }))
+        }
+
+        throw new E
