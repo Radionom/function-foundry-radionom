@@ -64,4 +64,18 @@ export class Foundry {
             }))
         }
 
-        throw new E
+        throw new Error(`Invalid target: ${target}`)
+    }
+
+    public async runSelectedFunction({
+        name,
+        arguments: rawArguments,
+    }: {
+        name?: string | undefined
+        arguments?: string | undefined
+    }) {
+        if (!name) {
+            throw new Error(`Invalid name: ${name}`)
+        }
+        if (!rawArguments) {
+            throw new Error(`Invalid argument
