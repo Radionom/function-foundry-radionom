@@ -78,4 +78,16 @@ export class Foundry {
             throw new Error(`Invalid name: ${name}`)
         }
         if (!rawArguments) {
-            throw new Error(`Invalid argument
+            throw new Error(`Invalid arguments: ${rawArguments}`)
+        }
+
+        let parsedArgs = null
+        try {
+            parsedArgs = JSON.parse(rawArguments)
+        } catch (e) {
+            throw new Error(`Unable to parse arguments: ${arguments}`)
+        }
+
+        const func = this.getFunction(name)
+
+        return await func.call(par
