@@ -90,4 +90,6 @@ export class Foundry {
 
         const func = this.getFunction(name)
 
-        return await func.call(par
+        return await func.call(parsedArgs)
+    }
+}
