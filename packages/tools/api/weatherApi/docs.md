@@ -20,3 +20,11 @@ Properties:
 
 -   `city` (string)
 -   `days` (number): Number of days of weather forecast. Value ranges from 1 to 10. 1 is today's weather, 2 is today and tomorrow's weather, and so on.
+
+### getCurrentWeatherForCity
+
+Gets the current weather for a city.
+
+Properties:
+
+-   `city` (string)
