@@ -8,4 +8,12 @@
     "type": "module",
     "scripts": {
         "build": "tsup src/index.ts --format cjs,esm --dts",
-        "postbuild": "pnpm ge
+        "postbuild": "pnpm generate-docs",
+        "generate-docs": "node ./node_modules/@usefoundry/utils/dist/cli.js generate-docs --type api",
+        "release": "pnpm build && changeset publish",
+        "lint": "tsc",
+        "test": "vitest"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^2.26.2",
+        "@types/jest": "^29.5.2",
