@@ -4,4 +4,7 @@ import Tool from '../index.js'
 import { expect, test } from 'vitest'
 
 test('Tool defined correctly', async () => {
-    const instance = new 
+    const instance = new Tool({ apiKey: '' })
+
+    expect(validateTool(instance)).toBe(true)
+})
