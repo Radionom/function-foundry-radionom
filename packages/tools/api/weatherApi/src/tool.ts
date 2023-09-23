@@ -7,4 +7,15 @@ import { createApi } from './api.js'
 export class WeatherApiTool {
     public description = 'Tool to get weather data from weatherapi.com'
 
-    private a
+    private apiKey: string = ''
+    private apiClient: AxiosInstance
+    constructor({ apiKey }: { apiKey: string }) {
+        this.apiKey = apiKey
+        this.apiClient = createApi({ apiKey })
+    }
+
+    public getFutureWeatherForCityAtDate = makeFunction(
+        z
+            .object({
+                city: z.string(),
+              
