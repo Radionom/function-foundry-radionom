@@ -18,4 +18,8 @@ export class WeatherApiTool {
         z
             .object({
                 city: z.string(),
-              
+                date: z.string().describe('Date in YYYY-MM-DD format'),
+            })
+            .describe(
+                'Gets the weather forecast for a city at a specific date, starting 14 days in the future. So for getting the weather for a day within the next 14 days, use the getNearFutureWeatherForCity function.'
+            ),
