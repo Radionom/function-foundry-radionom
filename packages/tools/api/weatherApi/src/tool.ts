@@ -23,3 +23,13 @@ export class WeatherApiTool {
             .describe(
                 'Gets the weather forecast for a city at a specific date, starting 14 days in the future. So for getting the weather for a day within the next 14 days, use the getNearFutureWeatherForCity function.'
             ),
+        async ({ city, date }) => {
+            const res = await this.apiClient.get(
+                `/v1/future.json?key=${this.apiKey}&q=${city}&dt=${date}`
+            )
+
+            if (res.data?.forecast?.forecastDay?.[0]) {
+                return res.data.forecast.forecastDay[0].day
+            }
+
+            return r
