@@ -32,4 +32,15 @@ export class WeatherApiTool {
                 return res.data.forecast.forecastDay[0].day
             }
 
-            return r
+            return res.data
+        }
+    )
+
+    public getNearFutureWeatherForCity = makeFunction(
+        z
+            .object({
+                city: z.string(),
+                days: z
+                    .number()
+                    .describe(
+                        "Number of days of weather forecast. Value ranges from 1 to 1
