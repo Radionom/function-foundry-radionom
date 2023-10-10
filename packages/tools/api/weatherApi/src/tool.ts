@@ -49,4 +49,12 @@ export class WeatherApiTool {
             .describe(
                 'Gets the weather forecast for a city for the next 1-10 days. Always use this function when asked about a date WITHIN the next 14 days.'
             ),
-        async ({ city, day
+        async ({ city, days }) => {
+            const res = await this.apiClient.get(
+                `/v1/forecast.json?key=${this.apiKey}&q=${city}&days=${days}`
+            )
+
+            if (res.data?.forecast?.forecastday?.length) {
+                return res.data.forecast.forecastday.map((day: any) => ({
+                    date: day.date,
+  
