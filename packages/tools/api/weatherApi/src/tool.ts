@@ -57,4 +57,18 @@ export class WeatherApiTool {
             if (res.data?.forecast?.forecastday?.length) {
                 return res.data.forecast.forecastday.map((day: any) => ({
                     date: day.date,
-  
+                    weather: day.day,
+                }))
+            }
+
+            return res.data
+        }
+    )
+
+    public getCurrentWeatherForCity = makeFunction(
+        z
+            .object({
+                city: z.string(),
+            })
+            .describe('Gets the current weather for a city.'),
+        async ({ c
