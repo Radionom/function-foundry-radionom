@@ -71,4 +71,16 @@ export class WeatherApiTool {
                 city: z.string(),
             })
             .describe('Gets the current weather for a city.'),
-        async ({ c
+        async ({ city }) => {
+            const res = await this.apiClient.get(`/v1/current.json?key=${this.apiKey}&q=${city}`)
+
+            if (res.data?.current) {
+                return res.data.current
+            }
+
+            return res.data
+        }
+    )
+}
+
+export default WeatherApiTool
