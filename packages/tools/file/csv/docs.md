@@ -23,4 +23,16 @@ Properties:
 
 ### getCsvFileColumnsSync
 
-Gets the columns of a csv file. Always call before appending to csv file, to know which 
+Gets the columns of a csv file. Always call before appending to csv file, to know which structure to use
+
+Properties:
+
+-   `path` (string)
+
+### readCsvFileSync
+
+Reads data from a csv file into an array of objects, each object representing a row
+
+Properties:
+
+-   `path` (string)
