@@ -14,4 +14,13 @@ Properties:
 
 ### appendToCsvFileSync
 
-Appends data to an exi
+Appends data to an existing csv file
+
+Properties:
+
+-   `path` (string)
+-   `data` (array): The rows to append, as an array of objects, each key representing a column. Only use existing columns
+
+### getCsvFileColumnsSync
+
+Gets the columns of a csv file. Always call before appending to csv file, to know which 
