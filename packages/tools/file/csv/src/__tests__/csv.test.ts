@@ -113,3 +113,4 @@ test('get columns', async () => {
     })
 
     expect(columns).toEqual(['name', 'age'])
+})
