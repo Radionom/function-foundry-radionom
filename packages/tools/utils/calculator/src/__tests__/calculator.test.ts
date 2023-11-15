@@ -10,4 +10,13 @@ test('Tool defined correctly', async () => {
 })
 
 test('do math', async () => {
-    const instance = new 
+    const instance = new Tool()
+
+    expect(await instance.calculate({ expression: '1+1' })).toBe(2)
+})
+
+test('do math', async () => {
+    const instance = new Tool()
+
+    expect(await instance.calculate({ expression: '10/20' })).toBe(0.5)
+})
