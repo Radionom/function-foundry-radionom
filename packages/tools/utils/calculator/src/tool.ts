@@ -10,4 +10,13 @@ export class CalculatorTool {
             .object({
                 expression: z.string().describe('The mathematical expression to evaluate'),
             })
-            .des
+            .describe(
+                'Evaluates a mathematical expression and returns the result as string. Always use it do any math'
+            ),
+        async ({ expression }) => {
+            return evaluate(expression)
+        }
+    )
+}
+
+export default CalculatorTool
