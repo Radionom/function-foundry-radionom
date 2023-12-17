@@ -46,4 +46,11 @@ var RandomTool = class {
       type: import_zod.z.enum(["positive", "negative", "any"])
     }).describe("Generates a random integer number without specific boundaries"),
     async ({ type }) => {
-      if (type ===
+      if (type === "positive") {
+        return import_crypto.default.randomInt(0, Number.MAX_SAFE_INTEGER);
+      }
+      if (type === "negative") {
+        return import_crypto.default.randomInt(Number.MIN_SAFE_INTEGER, 0);
+      }
+      return import_crypto.default.randomInt(Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
+  
