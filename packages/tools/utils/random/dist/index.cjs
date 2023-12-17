@@ -38,3 +38,12 @@ module.exports = __toCommonJS(src_exports);
 var import_utils = require("@usefoundry/utils");
 var import_zod = require("zod");
 var import_crypto = __toESM(require("crypto"), 1);
+var RandomTool = class {
+  constructor() {
+  }
+  randomInteger = (0, import_utils.makeFunction)(
+    import_zod.z.object({
+      type: import_zod.z.enum(["positive", "negative", "any"])
+    }).describe("Generates a random integer number without specific boundaries"),
+    async ({ type }) => {
+      if (type ===
