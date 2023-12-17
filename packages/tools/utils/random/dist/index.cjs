@@ -53,4 +53,10 @@ var RandomTool = class {
         return import_crypto.default.randomInt(Number.MIN_SAFE_INTEGER, 0);
       }
       return import_crypto.default.randomInt(Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
-  
+    }
+  );
+};
+var tool_default = RandomTool;
+
+// src/index.ts
+var src_default = tool_default;
