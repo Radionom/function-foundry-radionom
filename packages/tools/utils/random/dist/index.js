@@ -22,4 +22,8 @@ var RandomTool = class {
 };
 var tool_default = RandomTool;
 
-// src/inde
+// src/index.ts
+var src_default = tool_default;
+export {
+  src_default as default
+};

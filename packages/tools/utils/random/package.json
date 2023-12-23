@@ -1,0 +1,9 @@
+{
+    "name": "@usefoundry/tools-utils-random",
+    "version": "0.1.1",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "author": "Foundry Community",
+    "license": "MIT",
+    "repository": "https://github.com/eykrehbe
