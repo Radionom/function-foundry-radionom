@@ -6,4 +6,10 @@
     "type": "module",
     "author": "Foundry Community",
     "license": "MIT",
-    "repository": "https://github.com/eykrehbe
+    "repository": "https://github.com/eykrehbein/foundry",
+    "homepage": "https://docs.usefoundry.io/tools/utils/Random",
+    "scripts": {
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "postbuild": "pnpm generate-docs",
+        "generate-docs": "node ./node_modules/@usefoundry/utils/dist/cli.js generate-docs --type utils",
+        "release": "pnpm bu
