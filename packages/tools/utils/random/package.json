@@ -25,4 +25,7 @@
     },
     "dependencies": {
         "@usefoundry/tsconfig": "*",
-        "@
+        "@usefoundry/utils": "*",
+        "zod": "^3.21.4"
+    }
+}
