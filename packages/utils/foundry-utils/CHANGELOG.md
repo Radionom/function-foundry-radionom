@@ -4,4 +4,4 @@
 
 ### Patch Changes
 
--   964db49: minor config chan
+-   964db49: minor config changes

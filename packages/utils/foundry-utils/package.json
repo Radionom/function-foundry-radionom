@@ -1,0 +1,11 @@
+{
+    "name": "@usefoundry/utils",
+    "version": "0.1.1",
+    "description": "Utilities to be used with Foundry",
+    "main": "dist/index.js",
+    "type": "module",
+    "author": "Eyk Rehbein",
+    "scripts": {
+        "build": "tsup src/index.ts src/cli.ts --format cjs,esm --dts",
+        "lint": "tsc",
+        "test": "vitest"
