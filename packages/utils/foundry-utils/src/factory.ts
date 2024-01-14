@@ -10,4 +10,20 @@ export const makeFunction = <T extends z.ZodType<any, any>>(
     returnFunction.prototype = {
         getDefinition: () => {
             return {
-                description: prop
+                description: properties._def.description,
+                schema: zodToJsonSchema(properties),
+            }
+        },
+    }
+
+    return returnFunction
+}
+
+export type FunctionRef = ReturnType<typeof makeFunction> & {
+    prototype: {
+        getDefinition: () => DefinitionProps
+    }
+}
+
+export type DefinitionProps = {
+    des
