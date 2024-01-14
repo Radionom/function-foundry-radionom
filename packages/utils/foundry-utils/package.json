@@ -21,4 +21,11 @@
         "zod-to-json-schema": "^3.21.2"
     },
     "devDependencies": {
-        "@t
+        "@types/node": "^20.3.3",
+        "tsup": "^7.0.0",
+        "typescript": "^5.1.3"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
