@@ -1,1 +1,13 @@
-import { zodToJs
+import { zodToJsonSchema } from 'zod-to-json-schema'
+import { z } from 'zod'
+
+export const makeFunction = <T extends z.ZodType<any, any>>(
+    properties: T,
+    call: (args: z.infer<T>) => any
+) => {
+    const returnFunction = call
+
+    returnFunction.prototype = {
+        getDefinition: () => {
+            return {
+                description: prop
