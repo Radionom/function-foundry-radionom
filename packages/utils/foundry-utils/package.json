@@ -9,3 +9,16 @@
         "build": "tsup src/index.ts src/cli.ts --format cjs,esm --dts",
         "lint": "tsc",
         "test": "vitest"
+    },
+    "license": "MIT",
+    "private": false,
+    "dependencies": {
+        "@usefoundry/tsconfig": "*",
+        "axios": "^1.4.0",
+        "commander": "^11.0.0",
+        "tablemark": "^3.0.0",
+        "zod": "^3.21.4",
+        "zod-to-json-schema": "^3.21.2"
+    },
+    "devDependencies": {
+        "@t
