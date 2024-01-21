@@ -9,4 +9,14 @@ export const validateTool = (toolInstance: any) => {
     const functions = attributes
         .filter(
             // @ts-ignore
-    
+            (name) => typeof toolInstance[name] === 'function' && name
+        )
+        .filter((name) => name !== 'constructor' && name !== 'apiClient')
+        .map((name) => ({
+            name: name,
+            // @ts-ignore
+            func: toolInstance[name],
+        }))
+
+    for (const el of functions) {
+     
