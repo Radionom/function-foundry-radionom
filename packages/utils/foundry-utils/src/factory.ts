@@ -26,4 +26,6 @@ export type FunctionRef = ReturnType<typeof makeFunction> & {
 }
 
 export type DefinitionProps = {
-    des
+    description: string
+    schema: object
+}
