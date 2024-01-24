@@ -19,4 +19,17 @@ export const validateTool = (toolInstance: any) => {
         }))
 
     for (const el of functions) {
-     
+        validateFunction(el.func)
+    }
+    return true
+}
+
+export const validateFunction = (func: FunctionRef) => {
+    const definition = func.prototype.getDefinition()
+
+    if (!definition) {
+        throw new Error(`Function ${func.name} does not have a definition.`)
+    }
+
+    if (!definition.schema) {
+        throw new Error
