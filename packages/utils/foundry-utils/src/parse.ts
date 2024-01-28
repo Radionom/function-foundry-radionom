@@ -56,4 +56,12 @@ export const parseStandaloneFunction = (func: FunctionRef): ParsedFunctionRef =>
 
 export const parseToolFunctions = (toolInstance: any): ParsedFunctionRef[] => {
     const attributes = Object.getOwnPropertyNames(toolInstance)
-    const 
+    const functions = attributes
+        .filter(
+            // @ts-ignore
+            (name) => typeof toolInstance[name] === 'function' && name
+        )
+        .filter((name) => name !== 'constructor' && name !== 'apiClient')
+        .map((name) => ({
+            tool: toolInstance.constructor.name as string,
+            
