@@ -32,4 +32,15 @@ export const validateFunction = (func: FunctionRef) => {
     }
 
     if (!definition.schema) {
-        throw new Error
+        throw new Error(`Function ${func.name} does not have a schema.`)
+    }
+
+    if (!definition.description) {
+        throw new Error(`Function ${func.name} does not have a description.`)
+    }
+
+    return true
+}
+
+export const parseStandaloneFunction = (func: FunctionRef): ParsedFunctionRef => {
+    const definition = func.prototype.getDefin
