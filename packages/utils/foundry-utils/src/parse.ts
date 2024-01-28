@@ -43,4 +43,17 @@ export const validateFunction = (func: FunctionRef) => {
 }
 
 export const parseStandaloneFunction = (func: FunctionRef): ParsedFunctionRef => {
-    const definition = func.prototype.getDefin
+    const definition = func.prototype.getDefinition()
+
+    return {
+        tool: null,
+        name: func.name,
+        fullName: func.name,
+        definition,
+        call: func,
+    }
+}
+
+export const parseToolFunctions = (toolInstance: any): ParsedFunctionRef[] => {
+    const attributes = Object.getOwnPropertyNames(toolInstance)
+    const 
