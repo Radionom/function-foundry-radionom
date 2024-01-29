@@ -72,4 +72,13 @@ export const parseToolFunctions = (toolInstance: any): ParsedFunctionRef[] => {
             call: toolInstance[name] as FunctionRef,
         }))
 
-    return functio
+    return functions
+}
+
+export type ParsedFunctionRef = {
+    tool: string | null
+    name: string
+    fullName: string
+    definition: DefinitionProps
+    call: FunctionRef
+}
