@@ -64,4 +64,12 @@ export const parseToolFunctions = (toolInstance: any): ParsedFunctionRef[] => {
         .filter((name) => name !== 'constructor' && name !== 'apiClient')
         .map((name) => ({
             tool: toolInstance.constructor.name as string,
-            
+            name: name as string,
+            fullName:
+                toolInstance[name].prototype?.fullName ||
+                `${toolInstance.constructor.name}__${name}`,
+            definition: toolInstance[name]?.prototype?.getDefinition() as DefinitionProps,
+            call: toolInstance[name] as FunctionRef,
+        }))
+
+    return functio
