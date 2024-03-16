@@ -14,4 +14,10 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         prompts: [
             {
                 type: 'input',
-               
+                name: 'name',
+                message: "The name of the tool to create, e.g. 'zoomApi', 'pdf', etc.",
+                validate: (input: string) => {
+                    if (input.includes('.')) {
+                        return 'tool name cannot include an extension'
+                    }
+                    if (input.includes(' ')
