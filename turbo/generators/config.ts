@@ -20,4 +20,15 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
                     if (input.includes('.')) {
                         return 'tool name cannot include an extension'
                     }
-                    if (input.includes(' ')
+                    if (input.includes(' ')) {
+                        return 'tool name cannot include spaces'
+                    }
+                    if (!input) {
+                        return 'tool name is required'
+                    }
+                    return true
+                },
+            },
+            {
+                type: 'list',
+             
