@@ -31,4 +31,13 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
             },
             {
                 type: 'list',
-             
+                name: 'type',
+                message: 'What type of tool is this?',
+                choices: ['api', 'file', 'utils'],
+            },
+        ],
+        actions: [
+            {
+                type: 'addMany',
+                destination: '{{ turbo.paths.root }}/packages/tools/{{type}}/{{ camelCase name }}',
+  
