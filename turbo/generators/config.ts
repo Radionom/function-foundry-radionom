@@ -40,4 +40,10 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
             {
                 type: 'addMany',
                 destination: '{{ turbo.paths.root }}/packages/tools/{{type}}/{{ camelCase name }}',
-  
+                templateFiles: 'templates/tool/{{ type }}/**/*.hbs',
+                base: 'templates/tool/{{ type }}',
+            },
+            installPackages,
+        ],
+    })
+}
