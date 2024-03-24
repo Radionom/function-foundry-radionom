@@ -8,4 +8,12 @@
     "repository": "https://github.com/eykrehbein/foundry",
     "homepage": "https://docs.usefoundry.io/tools/api/{{pascalCase name}}",
     "license": "MIT",
-   
+    "scripts": {
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "postbuild": "pnpm generate-docs",
+        "generate-docs": "node ./node_modules/@usefoundry/utils/dist/cli.js generate-docs --type api",
+        "release": "pnpm build && changeset publish",
+        "lint": "tsc",
+        "test": "vitest"
+    },
+    "devDependenci
