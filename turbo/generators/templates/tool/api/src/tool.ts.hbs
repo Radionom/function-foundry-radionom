@@ -18,4 +18,11 @@ export class {{pascalCase name}}Tool {
                 "Does something important"
             ),
         async ({ name }) => {
-            const res = this.apiClient.post("/test", { nam
+            const res = this.apiClient.post("/test", { name })
+
+            return res;
+        }
+    );
+}
+
+export default {{pascalCase name}}Tool;
