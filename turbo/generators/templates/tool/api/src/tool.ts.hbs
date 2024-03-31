@@ -6,4 +6,16 @@ export class {{pascalCase name}}Tool {
     private apiClient: AxiosInstance;
     constructor({ apiKey }: { apiKey: string }) {
         this.apiKey = apiKey;
-    
+        this.apiClient = createApi({ apiKey });
+    }
+
+    public myFunction = makeFunction(
+        z
+            .object({
+                name: z.string(),
+            })
+            .describe(
+                "Does something important"
+            ),
+        async ({ name }) => {
+            const res = this.apiClient.post("/test", { nam
