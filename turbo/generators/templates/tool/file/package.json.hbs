@@ -1,4 +1,12 @@
 {
     "name": "@usefoundry/tools-file-{{dashCase name}}",
     "version": "0.1.0",
-    "main": "dist/index.
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "author": "Foundry Community",
+    "license": "MIT",
+    "repository": "https://github.com/eykrehbein/foundry",
+    "homepage": "https://docs.usefoundry.io/tools/file/{{pascalCase name}}",
+    "scripts": {
+        "build": "tsup src/index.ts --format cjs
